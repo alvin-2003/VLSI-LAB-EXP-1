@@ -40,12 +40,78 @@ Full Subtractor:
 
 
 VERILOG CODE:
-
-----Type Verilog Code
-
+1.
+FULL ADDER CODE:
+```
+module fulladder(sum,cout, a,b,c);
+input a,b,c;
+output sum,cout;
+  wire w1,w2,w3,w4,w5;
+  xor x1(w1,a,b);
+  xor x2(sum,w1,c);  
+  and a1(w2,a,b);
+  and a2(w3,b,c);
+  and a3(w4,a,c);
+  
+  or o1(w5,w2,w3);
+  or o2(cout,w5,w4);
+    
+endmodule
+```
 OUTPUT:
+SIMULATION:
+![image](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/da22ffe7-f3cc-4dce-9b56-4338676ccabf)
+ELABORATED DESIGN:
+![image](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/32f0b070-a80e-45f1-b3cb-a40e85731945)X
 
------Place a Waveform Generated from Xilinx ISE
+2.
+HALF ADDER CODE:
+```
+module half_adder(a,b,sum,carry);
+input a,b;
+output sum,carry; // sum and carry
+or(sum,a,b);
+and(carry,a,b);
+endmodule
+```
+OUTPUT:
+SIMULATION:
+![image](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/6898899c-506a-4247-8f29-24c9519ab0d9)
+ELABORATED DESIGN:
+![image](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/4c844f64-9255-4427-9519-b1168780cd28)
+
+3.
+FULL SUBRACTOR:
+```
+// fullsubtractor using gate level modeling
+module full_sub(borrow,diff,a,b,c);
+output borrow,diff;
+input a,b,c;
+wire w1,w4,w5,w6;
+xor (diff,a,b,c);
+not n1(w1,a);
+and a1(w4,w1,b);
+and a2(w5,w1,c);
+and a3(w6,b,c);
+or o1(borrow,w4,w5,w6);
+endmodule
+```
+OUTPUT
+SIMULATION:
+![image](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/37bdf45b-db0b-49f9-ac15-d85ae9eebaa4)
+ELABORATED DESIGN:
+
+4.
+HALF SUBTRACTOR:
+```
+module halfsubtractor( D,Bo,A,B);
+input A,B;
+output D,Bo;
+wire w1;
+xor (D,A,B);
+not (w1,B);
+and (Bo,B,w1);
+endmodule
 
 RESULT:
 
