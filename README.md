@@ -100,6 +100,7 @@ OUTPUT
 SIMULATION:
 ![image](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/37bdf45b-db0b-49f9-ac15-d85ae9eebaa4)
 ELABORATED DESIGN:
+![317327356-72c0bbaf-c51a-43d4-a2b6-c55c73245459](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/c8e64820-5d0b-4bc4-ad15-980e01062773)
 
 4.
 HALF SUBTRACTOR:
@@ -112,6 +113,117 @@ xor (D,A,B);
 not (w1,B);
 and (Bo,B,w1);
 endmodule
+```
+OUTPUT
+SIMULATION:
+![317337815-4f826bba-c803-46f4-aa12-51a6020a1d02](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/162baea4-60b3-499f-b762-75956c2228cd)
+ELABORATED DESIGN:
+![317338139-1646f000-56dc-4944-80c5-dcd15e35ae08](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/c075dfb9-29c1-4814-8a94-df136aa6b3b7)
+
+5.
+LOGIC_GATES: 
+```
+module logicgates(a,b,andgate,orgate,xorgate,nandgate,norgate,xnorgate,notgate);
+input a,b;
+output andgate,orgate,xorgate,nandgate,norgate,xnorgate,notgate;
+and(andgate,a,b);
+or(orgate,a,b);
+xor(xorgate,a,b);
+nand(nandgate,a,b);  
+nor(norgate,a,b);
+xnor(xnorgate,a,b);
+not(notgate,a);
+endmodule
+```
+OUTPUT:
+SIMULATION:
+![317342238-8ea068c7-4870-4224-9def-3b441ca500e8](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/82e74947-77fc-4d9a-a0a2-6f9f25f95470)
+ELABORATED DESIGN:
+![317342553-51299302-0ebd-4a71-9047-070d13ce30f8](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/1dcce76a-7793-40ac-b8ba-5c5299fb85ec)
+
+6.
+RIPPLE_CARRY_Adder(4-BIT):-
+```
+module rippe_adder(S, Cout, X, Y,Cin);
+input [3:0] X, Y;// Two 4-bit inputs
+input Cin;
+output [3:0] S;
+output Cout;
+wire wl, w2, w3;
+
+fulladder u1(S[0], w1,X[0], Y[0], Cin);
+fulladder u2(S[1], w2,X[1], Y[1], w1);
+fulladder u3(S[2], w3,X[2], Y[2], w2);
+fulladder u4(S[3], Cout,X[3], Y[3], w3);
+endmodule
+module fulladder(S, Co, X, Y, Ci);
+input X, Y, Ci;
+output S, Co;
+wire w1,w2,w3;
+//Structural code for one bit full adder 
+xor G1(wl, X, Y);
+xor G2(S, w1, Ci);
+and G3(w2, w1, Ci);
+and G4(w3, X, Y);
+or  G5(Co, w2, w3);
+endmodule
+```
+OUTPUT:
+SIMULATION:
+![317347459-5693d20b-dd92-4623-948c-f34d75e15bac](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/5c76be55-d4a5-484f-99dc-10a686647231)
+ELABORATED DESIGN:
+![317347282-2fd66ce3-4067-41df-9265-652ac4e07886](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/6402e62e-2b2b-4ec4-916d-62f055ca69db)
+
+7.
+RIPPLE_CARRY_ADDER(8-BIT):-
+```
+module fulladder(sum,cout, a,b,c);
+input a,b,c;
+output sum,cout;
+  wire w1,w2,w3,w4,w5;
+  xor x1(w1,a,b);
+  xor x2(sum,w1,c);  
+  and a1(w2,a,b);
+  and a2(w3,b,c);
+  and a3(w4,a,c);
+  
+  or o1(w5,w2,w3);
+  or o2(cout,w5,w4);
+    
+endmodule
+module rippe_adder(S,Cout,X,Y,Cin);
+input [7:0] X,Y;
+input Cin;
+output [7:0] S;
+output Cout;
+wire w1,w2,w3,w4,w5,w6,w7;
+fulladder u1(S[0],w1,X[0],Y[0],Cin);
+fulladder u2(S[1],w2,X[1],Y[1],w1);
+fulladder u3(S[2],w3,X[2],Y[2],w2);
+fulladder u4(S[3],w4,X[3],Y[3],w3);
+fulladder u5(S[4],w5,X[4],Y[4],w4);
+fulladder u6(S[5],w6,X[5],Y[5],w5);
+fulladder u7(S[6],w7,X[6],Y[6],w6);
+fulladder u8(S[7],Cout,X[7],Y[7],w7);
+endmodule
+
+module fulladder(S,CO,X,Y,Ci);
+input X,Y,Ci;
+output S,CO;
+wire w1,w2,w3;
+xor G1(w1,X,Y);
+xor G2(S,w1,Ci);
+and G3(w2,X,Ci);
+and G4(w3,X,Y);
+or G5(CO,w3,w3);
+endmodule
+```
+OUTPUT:
+SIMULATION:
+![317348471-8f2236eb-8ecf-43ca-afe7-38859087f512](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/4770dc7f-c350-45ec-99a2-f8a00c3d9cfc)
+ELABORATED DESIGN:
+![317348323-012dabdf-2bca-4a1f-b710-9abece39c8fa](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/daddb44a-d927-4bd0-bff2-a777cffe4b59)
+
 
 RESULT:
 
