@@ -226,4 +226,4 @@ ELABORATED DESIGN:
 
 
 RESULT:
-
+Thus the Simulation of Logic Gates ,Adders and Subtractors is done and verified.
