@@ -2,7 +2,8 @@
 # AIM:
 To simulate and synthesis Logic Gates,Adders and Subtractor using Vivado 2023.2.
 
-# APPARATUS REQUIRED: Vivad0 2023.2
+# APPARATUS REQUIRED: 
+  Vivad0 2023.2
 
 # PROCEDURE:
 STEP:1 Start the Xilinx navigator, Select and Name the New project. 
