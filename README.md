@@ -1,47 +1,59 @@
 # VLSI-LAB-EXPERIMENTS
-AIM: To simulate and synthesis Logic Gates,Adders and Subtractor using Xilinx ISE.
+# AIM:
+To simulate and synthesis Logic Gates,Adders and Subtractor using Vivado 2023.2.
 
-APPARATUS REQUIRED: Xilinx 14.7 Spartan6 FPGA
+# APPARATUS REQUIRED: Vivad0 2023.2
 
-PROCEDURE: STEP:1 Start the Xilinx navigator, Select and Name the New project. STEP:2 Select the device family, device, package and speed. STEP:3 Select new source in the New Project and select Verilog Module as the Source type. STEP:4 Type the File Name and Click Next and then finish button. Type the code and save it. STEP:5 Select the Behavioral Simulation in the Source Window and click the check syntax. STEP:6 Click the simulation to simulate the program and give the inputs and verify the outputs as per the truth table. STEP:7 Select the Implementation in the Sources Window and select the required file in the Processes Window. STEP:8 Select Check Syntax from the Synthesize XST Process. Double Click in the Floorplan Area/IO/Logic-Post Synthesis process in the User Constraints process group. UCF(User constraint File) is obtained. STEP:9 In the Design Object List Window, enter the pin location for each pin in the Loc column Select save from the File menu. STEP:10 Double click on the Implement Design and double click on the Generate Programming File to create a bitstream of the design.(.v) file is converted into .bit file here. STEP:12 Load the Bit file into the SPARTAN 6 FPGA STEP:11 On the board, by giving required input, the LEDs starts to glow light, indicating the output.
+# PROCEDURE:
+STEP:1 Start the Xilinx navigator, Select and Name the New project. 
+STEP:2 Select the device family, device, package and speed. 
+STEP:3 Select new source in the New Project and select Verilog Module as the Source type.
+STEP:4 Type the File Name and Click Next and then finish button. Type the code and save it. 
+STEP:5 Select the Behavioral Simulation in the Source Window and click the check syntax. 
+STEP:6 Click the simulation to simulate the program and give the inputs and verify the outputs as per the truth table.
+STEP:7 Select the Implementation in the Sources Window and select the required file in the Processes Window.
+STEP:8 Select Check Syntax from the Synthesize XST Process. Double Click in the Floorplan Area/IO/Logic-Post Synthesis process in the User Constraints process group. UCF(User constraint File) is obtained.
+STEP:9 In the Design Object List Window, enter the pin location for each pin in the Loc column Select save from the File menu.
+STEP:10 Double click on the Implement Design and double click on the Generate Programming File to create a bitstream of the design.(.v) file is converted into .bit file here.
+STEP:11 Load the Bit file into the SPARTAN 6 FPGA STEP:11 On the board, by giving required input, the LEDs starts to glow light, indicating the output.
 
-Logic Diagram :
+# Logic Diagram :
 
-Logic Gates:
+# Logic Gates:
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/ee17970c-3ac9-4603-881b-88e2825f41a4)
 
 
-Half Adder:
+# Half Adder:
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/0e1ecb96-0c25-4556-832b-aeeedfdfe7b9)
 
 
-Full adder:
+# Full adder:
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/9bb3964c-438f-469d-a3de-c1cca6f323fb)
 
 
-Half Subtractor:
+ #Half Subtractor:
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/731470b7-eb4e-49f8-8bb7-2994052a7184)
 
 
 
-Full Subtractor:
+# Full Subtractor:
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/d66f874b-c1f2-44b3-a035-7149b56430c1)
 
 
 
-8 Bit Ripple Carry Adder
+# 8 Bit Ripple Carry Adder
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/7385a408-40a5-4203-8050-b72818622d79)
 
 
 
-VERILOG CODE:
-1.
-FULL ADDER CODE:
+# VERILOG CODE:
+
+# FULL ADDER CODE:
 ```
 module fulladder(sum,cout, a,b,c);
 input a,b,c;
@@ -58,14 +70,13 @@ output sum,cout;
     
 endmodule
 ```
-OUTPUT:
-SIMULATION:
+# #OUTPUT:
+# SIMULATION:
 ![image](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/da22ffe7-f3cc-4dce-9b56-4338676ccabf)
-ELABORATED DESIGN:
+# ELABORATED DESIGN:
 ![image](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/32f0b070-a80e-45f1-b3cb-a40e85731945)X
 
-2.
-HALF ADDER CODE:
+# HALF ADDER CODE:
 ```
 module half_adder(a,b,sum,carry);
 input a,b;
@@ -74,14 +85,13 @@ or(sum,a,b);
 and(carry,a,b);
 endmodule
 ```
-OUTPUT:
-SIMULATION:
+# OUTPUT:
+# SIMULATION:
 ![image](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/6898899c-506a-4247-8f29-24c9519ab0d9)
-ELABORATED DESIGN:
+# ELABORATED DESIGN:
 ![image](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/4c844f64-9255-4427-9519-b1168780cd28)
 
-3.
-FULL SUBRACTOR:
+# FULL SUBRACTOR:
 ```
 // fullsubtractor using gate level modeling
 module full_sub(borrow,diff,a,b,c);
@@ -96,14 +106,13 @@ and a3(w6,b,c);
 or o1(borrow,w4,w5,w6);
 endmodule
 ```
-OUTPUT
-SIMULATION:
+# OUTPUT
+# SIMULATION:
 ![image](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/37bdf45b-db0b-49f9-ac15-d85ae9eebaa4)
-ELABORATED DESIGN:
+# ELABORATED DESIGN:
 ![317327356-72c0bbaf-c51a-43d4-a2b6-c55c73245459](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/c8e64820-5d0b-4bc4-ad15-980e01062773)
 
-4.
-HALF SUBTRACTOR:
+# HALF SUBTRACTOR:
 ```
 module halfsubtractor( D,Bo,A,B);
 input A,B;
@@ -114,14 +123,13 @@ not (w1,B);
 and (Bo,B,w1);
 endmodule
 ```
-OUTPUT
-SIMULATION:
+ # OUTPUT
+# SIMULATION:
 ![317337815-4f826bba-c803-46f4-aa12-51a6020a1d02](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/162baea4-60b3-499f-b762-75956c2228cd)
-ELABORATED DESIGN:
+# ELABORATED DESIGN:
 ![317338139-1646f000-56dc-4944-80c5-dcd15e35ae08](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/c075dfb9-29c1-4814-8a94-df136aa6b3b7)
 
-5.
-LOGIC_GATES: 
+# LOGIC_GATES: 
 ```
 module logicgates(a,b,andgate,orgate,xorgate,nandgate,norgate,xnorgate,notgate);
 input a,b;
@@ -135,14 +143,13 @@ xnor(xnorgate,a,b);
 not(notgate,a);
 endmodule
 ```
-OUTPUT:
-SIMULATION:
+# OUTPUT:
+# SIMULATION:
 ![317342238-8ea068c7-4870-4224-9def-3b441ca500e8](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/82e74947-77fc-4d9a-a0a2-6f9f25f95470)
-ELABORATED DESIGN:
+# ELABORATED DESIGN:
 ![317342553-51299302-0ebd-4a71-9047-070d13ce30f8](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/1dcce76a-7793-40ac-b8ba-5c5299fb85ec)
 
-6.
-RIPPLE_CARRY_Adder(4-BIT):-
+# RIPPLE_CARRY_Adder(4-BIT):-
 ```
 module rippe_adder(S, Cout, X, Y,Cin);
 input [3:0] X, Y;// Two 4-bit inputs
@@ -168,14 +175,13 @@ and G4(w3, X, Y);
 or  G5(Co, w2, w3);
 endmodule
 ```
-OUTPUT:
-SIMULATION:
+# OUTPUT:
+# SIMULATION:
 ![317347459-5693d20b-dd92-4623-948c-f34d75e15bac](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/5c76be55-d4a5-484f-99dc-10a686647231)
-ELABORATED DESIGN:
+# ELABORATED DESIGN:
 ![317347282-2fd66ce3-4067-41df-9265-652ac4e07886](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/6402e62e-2b2b-4ec4-916d-62f055ca69db)
 
-7.
-RIPPLE_CARRY_ADDER(8-BIT):-
+# RIPPLE_CARRY_ADDER(8-BIT):-
 ```
 module fulladder(sum,cout, a,b,c);
 input a,b,c;
@@ -218,12 +224,12 @@ and G4(w3,X,Y);
 or G5(CO,w3,w3);
 endmodule
 ```
-OUTPUT:
-SIMULATION:
+# OUTPUT:
+# SIMULATION:
 ![317348471-8f2236eb-8ecf-43ca-afe7-38859087f512](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/4770dc7f-c350-45ec-99a2-f8a00c3d9cfc)
-ELABORATED DESIGN:
+# ELABORATED DESIGN:
 ![317348323-012dabdf-2bca-4a1f-b710-9abece39c8fa](https://github.com/alvin-2003/VLSI-LAB-EXP-1/assets/163816866/daddb44a-d927-4bd0-bff2-a777cffe4b59)
 
 
-RESULT:
+# RESULT:
 Thus the Simulation of Logic Gates ,Adders and Subtractors is done and verified.
